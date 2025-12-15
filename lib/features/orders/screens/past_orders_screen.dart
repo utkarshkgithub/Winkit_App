@@ -39,19 +39,20 @@ class PastOrdersView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Orders'),
+        title: const Text('My Orders',),
+        centerTitle: true,
         elevation: 0,
         actions: [
           BlocBuilder<OrdersBloc, OrdersState>(
             builder: (context, state) {
-              if (state is OrdersLoaded) {
-                return IconButton(
-                  icon: const Icon(Icons.refresh),
-                  onPressed: () {
-                    context.read<OrdersBloc>().add(RefreshUserOrders(userId));
-                  },
-                );
-              }
+              // if (state is OrdersLoaded) {
+              //   return IconButton(
+              //     // icon: const Icon(Icons.refresh),
+              //     onPressed: () {
+              //       context.read<OrdersBloc>().add(RefreshUserOrders(userId));
+              //     },
+              //   );
+              // }
               return const SizedBox.shrink();
             },
           ),

@@ -124,6 +124,7 @@ class _HomeViewState extends State<HomeView>
                             },
                           ),
                         ),
+                        const SizedBox(height: 16),
                         const Divider(height: 1),
                         const SizedBox(height: 16),
                       ],
