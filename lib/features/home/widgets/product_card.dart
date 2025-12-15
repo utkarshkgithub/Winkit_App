@@ -28,9 +28,7 @@ class ProductCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             // Product Image
-            SizedBox(
-              height: 140,
-              width: double.infinity,
+            Expanded(
               child: Stack(
                 children: [
                   ClipRRect(
@@ -122,19 +120,16 @@ class ProductCard extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   // Product Name
-                  Flexible(
-                    child: Text(
-                      product.name,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 13,
-                        fontWeight: FontWeight.w600,
-                      ),
+                  Text(
+                    product.name,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
                     ),
                   ),
                   const SizedBox(height: 2),
@@ -153,16 +148,14 @@ class ProductCard extends StatelessWidget {
                         ),
                         const SizedBox(width: 4),
                       ],
-                      Flexible(
-                        child: Text(
-                          '\u{20B9}${product.discountedPrice ?? product.price}',
-                          style: TextStyle(
-                            fontSize: 15,
-                            fontWeight: FontWeight.bold,
-                            color: Theme.of(context).primaryColor,
-                          ),
-                          overflow: TextOverflow.ellipsis,
+                      Text(
+                        '\u{20B9}${product.discountedPrice ?? product.price}',
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Theme.of(context).primaryColor,
                         ),
+                        overflow: TextOverflow.ellipsis,
                       ),
                     ],
                   ),
